@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Sign up";
+}
+
+<form method = "post" action="connet.php">
+    <div class="container">
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+
+        <label for="email"><b>Username</b></label>
+        <input type="text" placeholder="Enter username" name="email" id="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" id="psw-repeat" name="r_psw" required>
+        <hr>
+        <button  asp-area="" asp-controller="Home" asp-action="Register">Register</button>
+
+    </div>
+</form>
+

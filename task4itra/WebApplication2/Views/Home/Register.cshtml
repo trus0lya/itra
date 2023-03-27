@@ -1,0 +1,34 @@
+﻿@model WebApplication2.Models.User
+
+
+<haed>
+    <style>
+       
+        .container-text {
+            color: white;
+            text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white, 0 0 20px crimson, 0 0 35px crimson, 0 0 40px crimson, 0 0 50px crimson, 0 0 75px crimson;
+        }
+    </style>
+</haed>
+
+<body>
+ 
+    <div class="container-text">
+    @if(@Model.user_id == 0) {
+        <h1>A user with the same name already exists. Come up with a new username.</h1>
+            <img class="homac"
+                 src="https://sun9-27.userapi.com/impf/sh_yfhRKuIHsqXKpczTftdpiDBuKzzny3IOMpg/1mWAp1HdZ4k.jpg?size=800x647&quality=96&sign=697775f544438e133e60be54afa86413&c_uniq_tag=xWi8UfRKBJWWZou1omLO54hgIazPawNN4wRlxPiEzHY&type=album" width="700">
+    } else if(@Model.user_id == -1) {
+        <h1>Passwords are different. Try again.</h1>
+            <img class="dog"
+                 src="https://wp-s.ru/wallpapers/6/6/472682344440624/sobaka-smotrit-zadumchivo-vdal.jpg" width ="900">
+    } else {
+        <h1>User successfully registered!</h1>
+            <img class="cat"
+                 src="https://chudo-prirody.com/uploads/posts/2021-08/1628905045_202-p-skachat-foto-milikh-kotikov-216.jpg">
+    }
+    
+ 
+    </div>
+</body>
+ 

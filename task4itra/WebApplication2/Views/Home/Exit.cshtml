@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Exit";
+}
+
+<form action="action_page.php">
+    <div class="container">
+        <h1>Entry</h1>
+        <p>Please fill in this form to entry.</p>
+        <hr>
+
+        <label for="user name"><b>User name</b></label>
+        <input type="text" placeholder="Enter user name" id="user name" name="user name" required>
+        <asp:Button ID="btnSave" runat="server" Text="Show Date" Style="width: 86px; height: 36px;" OnClick="btnSave_Click" />
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+
+
+        <hr>
+        <button type="submit" class="registerbtn" asp-area="" asp-controller="Home" asp-action="Entry">Entry</button>
+    </div>
+
+</form>

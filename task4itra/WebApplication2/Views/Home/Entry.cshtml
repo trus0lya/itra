@@ -1,0 +1,90 @@
+﻿@model List<WebApplication2.Models.User>
+
+
+<haed>
+    <style>
+        table {
+     
+            border-collapse: separate;
+            border: 3px solid grey;
+            width: 600px;
+        }
+
+
+        th, td {
+            border: 1px solid grey;
+            padding: 10px 15px;
+        }
+
+        td {
+            border-bottom: 1px solid grey;
+        }
+
+        th {
+            width: 20%;
+        }
+
+        td:first-child {
+            width: 30%;
+        }
+
+
+      
+    </style>
+</haed>
+
+<form method="post">
+    <body>
+    @if(Model.ElementAt(0).user_id == 0)
+    {
+        <h1>
+            Invalid username or password!
+            <image src="https://thypix.com/wp-content/uploads/sad-cat-10.jpg" width = "800">
+            </h1>
+        } else if(Model.ElementAt(0).user_id == -1)
+        {
+            <h1>User is blocked :(
+                <image src="https://thypix.com/wp-content/uploads/sad-cat-10.jpg" width="800">
+            </h1>
+        }
+        else {
+            <label for="Block"><b>Block</b></label>
+            <input type="text" placeholder="id you want bo block" id="block" name="block">
+            <button  asp-area="" asp-controller="Home" asp-action="Block">Block</button>
+
+            <label for="Unblock"><b>Unblock</b></label>
+            <input type="text" placeholder="id you want bo unblock" id="unblock" name="unblock">
+            <button asp-area="" asp-controller="Home" asp-action="Unblock">Unblock</button>
+
+            <label for="Delete"><b>Delete</b></label>
+            <input type="text" placeholder="id you want bo delete" id="delete" name="delete">
+            <button  asp-area="" asp-controller="Home" asp-action="Delete">Delete</button>
+    <table border="1", width="400">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Register Date</th>
+            <th>Last Seen</th>
+            <th>Status</th>
+        </tr>
+        @foreach (var user in Model)
+        {
+            <tr>
+                  @*  <td>@user.user_id
+                        <button id="@user.user_id" name="@user.user_id" asp-area="" asp-controller="Home" asp-action="Block">Block</button>
+                            <button id="@user.user_id" name="@user.user_id" asp-area="" asp-controller="Home" asp-action="Unblock">Unblock</button>
+                            <button id="@user.user_id" name="@user.user_id" asp-area="" asp-controller="Home" asp-action="Delete">Delete</button>
+                    </td>*@
+                 <td>@user.user_id</td>
+                 <td>@user.user_name</td>
+                <td>@user.registration_date</td>
+                <td>@user.last_seen</td>
+                <td>@user.status</td>
+            </tr>
+       
+        }
+        </table>
+    }
+    
+    </body>
+</form>
