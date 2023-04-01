@@ -1,0 +1,60 @@
+﻿@model List<WebApplication1.Models.User>
+<head>
+    <style>
+        body {
+            background-image: url(https://gamerwall.pro/uploads/posts/2022-03/1647995942_9-gamerwall-pro-p-fon-telegram-krasivie-14.jpg);
+        }
+
+        table {
+            border-collapse: separate;
+            border: 3px solid grey;
+            width: 100px;
+        }
+
+        th, td, b {
+            border: 1px solid grey;
+            padding: 10px 15px;
+            color: white;
+            +
+        }
+
+        td {
+            border-bottom: 1px solid grey;
+        }
+
+        th {
+            width: 20%;
+        }
+
+        td:first-child {
+            width: 30%;
+        }
+
+    </style>
+</head>
+<form method="post">
+    <body>
+        <label for="user name"><b>Enter the name of the user you want to start a conversation with</b></label>
+        <input type="text" placeholder="User name" id="name" name="name">
+
+        <hr>
+        <table border="1" , width="100">
+
+            <tr>
+                @foreach (var user in Model)
+                {
+                    <th>@user.Name</th>
+                }
+            </tr>
+        </table>
+
+        <input type="text" placeholder="Enter your message" id="message" name="message" style="width: 500px; height: 100px;">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" asp-area="" asp-controller="Home" asp-action="Send">Send</button>
+        <hr>
+
+        <label for="user name"><b>View all message with:</b></label>
+        <input type="text" placeholder="Enter user" id="user" name="user">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" asp-area="" asp-controller="Home" asp-action="AllMessage">View</button>
+
+    </body>
+</form>

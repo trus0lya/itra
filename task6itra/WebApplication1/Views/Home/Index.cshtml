@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Sign in";
+}
+
+<head>
+    <style>
+        body {
+            background-image: url(https://gamerwall.pro/uploads/posts/2022-03/1647995953_13-gamerwall-pro-p-fon-telegram-krasivie-18.jpg);
+        }
+        b {
+           color : white;
+           
+        }
+        button {
+            align-content : center;
+        }
+     
+
+    </style>
+</head>
+
+<form method="post" action="action_page.php">
+    <body>
+    <div class="container">
+       
+
+        <label for="user name"><b>User name</b></label>
+        <input type="text" placeholder="Enter user name" id="name" name="name" required>
+        <hr>
+      
+        <button type="submit" class="btn btn-primary btn-lg btn-block" asp-area="" asp-controller="Home" asp-action="Login">Entry</button>
+            
+    </div>
+    </body>
+
+</form> 
+ 
+
+                     

@@ -1,0 +1,58 @@
+﻿@model List<WebApplication1.Models.Message>
+
+<head>
+    <style>
+        body {
+            background-image: url(https://phonoteka.org/uploads/posts/2022-02/1644219494_17-phonoteka-org-p-poligonalnii-fon-sinii-17.jpg);
+        }
+
+        .circle-block {
+            display: flex;
+            flex-direction: column;
+            width: 50%; /*ширина*/
+            margin: 0 auto;
+
+         
+            background: #d7fb86; /*фоновый цвет*/
+           
+       
+         
+            margin-bottom: 10px;
+        
+        }
+
+        .data{
+            text-align : left;
+            margin-left: 10px;
+        }
+
+        .time {
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        .mess {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            word-break: break-all;
+        }
+    </style>
+</head>
+
+
+    <body>
+    @foreach (var m in Model)
+    {
+     
+
+        <div class ="circle-block">
+            <div class="data"><i>@m.sender</i> </div>
+            <div class="mess"> @m.message</div>
+             <div class="time"><i>@m.time</i></div>
+              
+        </div>
+           
+     
+    }
+    </body>
